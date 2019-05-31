@@ -4,9 +4,6 @@ if(basename($_SERVER['PHP_SELF']) == basename(__FILE__))
 	header('Location: /');
 	exit;
 }
-?>
-
-<?php
 
 function renderActuatorBox($color, $icon, $header, $unit, $device)
 {
@@ -147,4 +144,8 @@ function generateGraphData($device, $ids, $footerDataDyn)
     return $footerDataDyn;
 }
 
-?>
+
+function renderError($type = 'unknown')
+{
+    echo sprintf('<div class="col-md-12"><div class="alert alert-danger">Aktuell keine %s angelegt</div></div>', $type);
+}

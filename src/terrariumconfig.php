@@ -55,4 +55,4 @@ $footerJs = <<<'EOT'
 </script>
 EOT;
 
-require_once("_footer.php") ?>
+require_once("_footer.php");

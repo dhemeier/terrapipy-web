@@ -1,28 +1,31 @@
 <?php
-$pageTitle = 'Sensoren';
+$pageTitle       = 'Sensoren';
 $pageDescription = 'Alle lesenden Geräte';
-$pageSkin = 'black';
-require_once("_header.php") ?>
+$pageSkin        = 'black';
+require_once("_header.php");
 
-<?php
 $devices = getDevices($pimaticUsername, $pimaticPassword, $pimaticHost);
 
-	$footerDataDyn = "";
-	$ids = 0;
+$footerDataDyn = "";
+$ids           = 0;
 
-	foreach($devices as $device)
-	{
-//print_r($device);
-		if($device->template !== 'temperature')
-			continue;
+if (count($devices) === 0)
+{
+    echo renderError('Sensoren');
+}
 
-	   renderGraph($device);
-	   $footerDataDyn = generateGraphData($device, $ids, $footerDataDyn);
-	   $ids++;
-	}
-?>
+foreach ($devices as $device)
+{
+    if ($device->template !== 'temperature')
+    {
+        continue;
+    }
 
-<?php
+    renderGraph($device);
+    $footerDataDyn = generateGraphData($device, $ids, $footerDataDyn);
+    $ids++;
+}
+
 $footerJs = <<<EOT
 <!-- ChartJS 1.0.1 -->
 <script src="adminlte/plugins/chartjs/Chart.min.js"></script>
@@ -75,4 +78,4 @@ $footerJs = <<<EOT
 </script>
 EOT;
 
-require_once("_footer.php") ?>
+require_once("_footer.php");

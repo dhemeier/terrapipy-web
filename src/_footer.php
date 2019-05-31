@@ -1,32 +1,32 @@
 <?php
-if(basename($_SERVER['PHP_SELF']) == basename(__FILE__))
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__))
 {
-	header('Location: /');
-	exit;
+    header('Location: /');
+    exit;
 }
 ?>
 
-	  
-      <div class="row">
-        <div class="col-md-12 text-center">
-	  <img src="images/logo.png">
-        </div>
-      </div>
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+<div class="row">
+    <div class="col-md-12 text-center">
+        <img src="images/logo.png">
+    </div>
+</div>
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      <?php echo "Status " . date('d.m.Y H:i') ?>
+        <?php echo "Status " . date('d.m.Y H:i') ?>
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2018 <a href="http://www.spech.de">Sebastian Pech</a>.</strong> All rights reserved.
-  </footer>
+</footer>
 
 </div>
 <!-- ./wrapper -->
@@ -38,6 +38,6 @@ if(basename($_SERVER['PHP_SELF']) == basename(__FILE__))
 <script src="adminlte/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="adminlte/dist/js/app.min.js"></script>
-<?php echo (isset($footerJs) ? $footerJs : "") ?>
+<?php echo(isset($footerJs) ? $footerJs : "") ?>
 </body>
 </html>

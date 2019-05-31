@@ -2,9 +2,8 @@
 $pageTitle = 'Terrarium';
 $pageDescription = 'Daten des Terrariums';
 $pageSkin = 'green';
-require_once("_header.php") ?>
+require_once("_header.php");
 
-<?php
 $id = htmlspecialchars($_GET['id']);
 $devices = getDevices($pimaticUsername, $pimaticPassword, $pimaticHost);
 ?>
@@ -150,4 +149,4 @@ $footerJs = <<<EOT
 </script>
 EOT;
 
-require_once("_footer.php") ?>
+require_once("_footer.php");
